@@ -1,10 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text,TextInput, View } from 'react-native';
 
-function MyApp() {
-
-
-
+function MyApp() {  
   const pet = "Dog";
   return (
     <View>
