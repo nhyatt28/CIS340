@@ -1,56 +1,33 @@
 import React from 'react';
-import {Text, Image, ScrollView } from 'react-native';
+import {Text, View, SectionList } from 'react-native';
 
-const dog = {
-  uri: "https://pngimg.com/uploads/dog/dog_PNG50321.png",
-  width: 64,
-  height: 64
-};
 
-export default MyScrollViewApp = () => ( 
+
+export default StatesApp = () => { 
+  return (
+    <View style = {{flex: 1, paddingTop: 2}}> 
+      <SectionList 
+        sections={[{title: 'A', data: ["Alabama", "Alaska", "Arizona", "Arkansas"]},
+        {title: 'C', data: ["Colorado","California"]},
+        {title: 'D', data: ["Delaware"]},
+
+        ]}  
+        renderItem = {({item}) => <Text style = {{padding: 10, fontSize: 20, height: 44}}> {item} </Text> }
+        renderSectionHeader = {({section}) => <Text style = {{paddingTop: 4, paddingLeft: 10,
+        paddingRight: 10,
+        paddingLeft: 2,
+        fontSize: 14,
+        fontWeight: "bold",
+        backgroundColor: "green",}}>{section.title}</Text> }
+
+        keyExtractor={(item,index) => index}
+        />
+    </View>
+      
+
+   
     
-
-    <ScrollView style = {{padding: 40}}>
-      <Text style = {{fontSize: 100}}> Try to scroll down</Text>
-      <Image source = {require('./assets/dog.png')} style = {{width: 64, height: 64}}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Text style = {{fontSize: 100}}> Try to scroll down again if you like</Text>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Text style = {{fontSize: 100}}> Try to scroll down again if you like</Text>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Text style = {{fontSize: 100}}> Try to scroll down again if you like</Text>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Text style = {{fontSize: 100}}> Try to scroll down again if you like</Text>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-      <Image source = {dog}/>
-    </ScrollView>
   );
-
+}
 
 
